@@ -5,8 +5,16 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bower": "~1.7.7",
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
     "bootstrap-sass": "^3.0.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "main-bower-files": "~2.13.1"
   }
 }
