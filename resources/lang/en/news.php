@@ -28,4 +28,8 @@ return [
     'add_news_success' => 'Add News Success',
     'edit_news_success' => 'Edit News Success',
     'delete_success' => 'Delete News Success',
+
+    'hot_news' => 'HOT NEWS',
+    'readest_news' => 'READEST NEWS',
+    'has_not_category' => 'Has not category',
 ];

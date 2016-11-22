@@ -1,4 +1,7 @@
 @extends('layouts.user.app')
+@section('title')
+    @lang('text.home_title')
+@stop
 
 @section('content')
     <h1 class='page-header'></h1>
@@ -38,7 +41,7 @@
                             </div>
                             <div class='title-time-ago'>
                                 <abbr class='timeago' title="{{ $element->created_at }}"></abbr>
-                            </div>  
+                            </div>
                         </div>
                         <div class='break'></div>
                     @elseif ($key != ($titleNews->count() - 1))
@@ -160,7 +163,7 @@
 
             @foreach ($cate as $keyCate => $c)
                 <h1 class='page-header col-md-12'>
-                    {{ $c->name }}
+                    <a href="{{ route('news-category.show', $c->id) }}">{{ $c->name }}</a>
                 </h1>
                 <div class='row row-item'>
                     @foreach ($c->news as $keyNews => $news)

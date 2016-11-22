@@ -77,6 +77,7 @@ Route::get('auth/{provider}/callback', [
 ]);
 
 Route::group(['namespace' => 'User'], function() {
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::resource('/news','NewsController');
+    Route::resource('/news-category', 'NewsCategoryController');
 });

@@ -61,6 +61,15 @@ div.title-readest-news {
     border-bottom: 1px solid #EEEEEE;
 }
 
+.hidden-title {
+    display: none;
+}
+
+.display-title {
+    margin-right: -35px !important;
+    margin-bottom: 10px !important;
+}
+
 .space20 {
     height: 20px;
     width: 100%;
@@ -143,10 +152,45 @@ a:hover {
     text-align: center;
 }
 
+.error {
+    width: 100%;
+    color: #B0BEC5;
+    text-align: center;
+    font-size: 72px;
+    margin-bottom: 40px;
+}
+
 .left-text {
     text-align: left;
 }
 
 .right-text {
     text-align: right;
+}
+
+.news-list-title-time-ago {
+    margin-top: 5px;
+    color: #bbb7b7;
+    font-size: 14px;
+}
+
+.readest-news-in-news-list {
+    height: 90px;
+    padding-top: 10px;
+}
+
+.news-list-description {
+    margin-top: 5px;
+}
+
+.margin-top0-imp {
+    margin-top: 0px !important; 
+}
+
+.margin-top5-imp {
+    margin-top: 0px !important; 
+}
+
+.margin-top10-imp {
+    margin-top: 0px !important; 
 }

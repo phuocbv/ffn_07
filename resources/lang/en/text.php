@@ -9,4 +9,7 @@ return[
     'admin_register' => 'Register',
     'admin_toggle_navigation' => 'Toggle navigation',
     'menu_item_category' => 'Category',
+
+    'error' => 'Error',
+    'not_found' => 'Not Found',
 ];

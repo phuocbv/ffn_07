@@ -41,9 +41,16 @@ class News extends BaseModel
         return $query->orderBy($column, $sort)->skip($skip)->take($take);
     }
 
-    public function scopeGetNewsByCategory($query, $idCategory, $take = 1, $column = 'created_at', $sort = 'desc')
+    public function scopeGetNewsByCategory($query, $idCategory, $take = null, $column = 'created_at', $sort = 'desc')
     {
-        return $query->where('cate_id', '=', $idCategory)->orderBy($column, $sort)->take($take);
+        return $take ? $query->where('cate_id', $idCategory)->orderBy($column, $sort)->take($take) :
+            $query->where('cate_id', $idCategory)->orderBy($column, $sort);
+    }
+
+    public function scopeGetNewsIsTitle($query, $idCategory, $take, $hot, $column = 'created_at', $sort = 'desc')
+    {
+        return $query->where('cate_id', $idCategory)
+            ->where('hot', $hot)->orderBy($column, $sort)->take($take); 
     }
 
     public function comments()

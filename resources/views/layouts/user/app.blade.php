@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Laravel</title>
+        <title>@yield('title')</title>
         <link href="{{ asset('user_asset/customs/css/customs.css') }}" rel="stylesheet">
         <link href="{{ asset('user_asset/customs/css/homepage.css') }}" rel="stylesheet">
         <script type="text/javascript" src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2') }}">
         <script type="text/javascript" src="{{ asset('bower_components/jquery-timeago/jquery.timeago.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('user_asset/customs/css/media.css') }}">
     </head>
     <body>
 

@@ -1,0 +1,39 @@
+@media (max-width: 768px) {
+    .title-time-ago {
+        text-align: left !important;
+    }
+}
+
+@media (min-width: 768px ) and (max-width: 992px) {
+    .image-title-right {
+        display: none;
+    }
+
+    .hidden-title {
+        display: block;
+    }
+
+    .display-title {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hidden-title {
+        display: none;
+    }
+
+    .display-title {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-title {
+        display: none;
+    }
+
+    .display-title {
+        display: block;
+    }
+}
