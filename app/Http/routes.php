@@ -93,9 +93,12 @@ Route::get('auth/{provider}/callback', [
 
 Route::group(['namespace' => 'User'], function() {
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::resource('/news','NewsController');
+    Route::resource('/news', 'NewsController');
     Route::resource('/news-category', 'NewsCategoryController');
     Route::post('/news/comments', 'NewsController@addComment');
+    Route::post('/home/searchLeagueSeason', 'HomeController@searchLeagueSeason');
+    Route::post('/home/searchTeam', 'HomeController@searchTeam');
+    Route::get('/matchInDay', 'MatchController@matchInDay');
 });
 
 Route::get('users/activation/{id}/{token}', [

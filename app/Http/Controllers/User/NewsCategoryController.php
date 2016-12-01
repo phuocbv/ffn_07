@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Category;
+use App\Country;
 use App\News;
 
 class NewsCategoryController extends Controller
@@ -13,8 +14,10 @@ class NewsCategoryController extends Controller
     public function show($id)
     {
         $categories = Category::all();
+        $country = Country::all();
         return view('user.news.news_list')->with([
             'categories' => $categories,
+            'country' => $country,
             'category' => Category::findOrFail($id),
             'ortherNews' => News::getNewsByCategory($id, config('view.count_other_news'))->get(),
             'news' => News::getNewsByCategory($id)->paginate(config('view.count_news_in_news_category')),

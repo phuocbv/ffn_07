@@ -34,6 +34,11 @@ class Rank extends Model
         return $query->where('league_season_id', $id)->get();
     }
 
+    public function scopeSearchByLeagueSeasonId($query, $leagueSeasonId)
+    {
+        return $query->where('league_season_id', $leagueSeasonId);
+    }
+
     public function team()
     {
     	return $this->belongsTo(Team::class);

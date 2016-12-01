@@ -7,4 +7,5 @@ return [
     'view_number' => 'view',
 
     'home' => 'Home',
+    'national' => 'National', 
 ];

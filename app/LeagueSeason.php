@@ -28,6 +28,11 @@ class LeagueSeason extends BaseModel
         ];
     }
 
+    public function scopeSearchByLeagueId($query, $leagueId)
+    {
+        return $query->where('league_id', $leagueId);
+    }
+
     public function league()
     {
     	return $this->belongsTo(League::class);

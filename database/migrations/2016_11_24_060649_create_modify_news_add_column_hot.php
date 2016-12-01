@@ -24,7 +24,7 @@ class CreateModifyNewsAddColumnHot extends Migration
      */
     public function down()
     {
-        Schema::table('news', function($table) {
+        Schema::table('news', function ($table) {
             $table->dropColumn('hot');
         });
     }

@@ -84,7 +84,7 @@
                         </a>
                     </div>
                     <div class='ratings'>
-                        <p>{{ $element->view_number }} @lang('user.view_number')</p>
+                        <p>&nbsp;</p>
                         <p class='view-time-ago'>
                             <abbr class='timeago' title='{{ $element->created_at }}'></abbr>
                         </p>

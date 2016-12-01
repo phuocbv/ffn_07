@@ -18,6 +18,22 @@
                     </li>
                 @endforeach
                 <li class="dropdown">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            @lang('user.national') <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach ($country as $key => $element)
+                                <li>
+                                    <a href="{{ url('/profile') }}">
+                                        <span class="glyphicon glyphicon-th-list"></span> {{ $element->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </li>
+                <li class="dropdown">
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">@lang('login.login')</a></li>
                         <li><a href="{{ url('/register') }}">@lang('login.register')</a></li>
