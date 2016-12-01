@@ -98,6 +98,8 @@ Route::group(['namespace' => 'User'], function() {
     Route::post('/news/comments', 'NewsController@addComment');
     Route::post('/home/searchLeagueSeason', 'HomeController@searchLeagueSeason');
     Route::post('/home/searchTeam', 'HomeController@searchTeam');
+    Route::resource('/team', 'TeamController');
+    Route::resource('/player', 'PlayerController');
     Route::get('/matchInDay', 'MatchController@matchInDay');
 });
 

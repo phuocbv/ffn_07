@@ -40,6 +40,14 @@ class Team extends BaseModel
         return $query->where('name', 'like', '%' . $name . '%');
     }
 
+    public function scopeTeamWithRank($query)
+    {
+        return Team::with('ranks')->get()->map(function($team) {
+            $team->ranks = $team->ranks->where('league_season_id', 1);
+            return $team;
+        });
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);

@@ -232,3 +232,9 @@ a:hover {
 .margin-top10-imp {
     margin-top: 0px !important; 
 }
+
+.title-player-info, .title-team-info {
+    font-weight: bold;
+    font-family: fantasy;
+    margin-top: 0px !important;
+}

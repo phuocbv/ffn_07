@@ -7,5 +7,13 @@ return [
     'view_number' => 'view',
 
     'home' => 'Home',
-    'national' => 'National', 
+    'national' => 'National',
+
+    'team_info' => 'Team Information',
+    'team_column_name' => 'Name',
+    'team_columb_introduction' => 'Introduction',
+    'team_column_position' => 'Position',
+    'team_column_country' => 'Country',
+
+    'player_info' => 'Player Information',
 ];

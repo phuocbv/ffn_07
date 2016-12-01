@@ -299,7 +299,7 @@
                             @foreach ($teams as $key => $team)
                                 <tr class='odd gradeX' align='center'>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $team->name }}</td>
+                                    <td><a href="{{ route('team.show', $team->id) }}">{{ $team->name }}</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

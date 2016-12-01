@@ -23,6 +23,7 @@ class HomeController extends Controller
         $leagues = League::lists('name', 'id')->all();
         $league_seasons = LeagueSeason::lists('year', 'id')->all();
         $teams = Team::all();
+        $team = Team::teamWithRank();
         return view('user.home')->with([
             'country' => $country,
             'leagues' => $leagues,

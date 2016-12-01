@@ -48,9 +48,6 @@ var home = function() {
             $('#league_seasons').html(result);
             current.data.league_season_id = $('#league_seasons').val();
             current.loadTeam();
-        })
-        .fail(function() {
-            console.log("error");
         });
     };
 
@@ -63,14 +60,11 @@ var home = function() {
         .done(function(data) {
             var result = '';
             for (var i = 0; i < data.length; i++) {
-                result += "<tr class='odd gradeX' align='center'>" +
-                    "<td>" + (i + 1) + "</td>" +
-                    "<td>" + data[i].name + "</td></tr>"
+                result += '<tr class="odd gradeX" align="center">' +
+                    '<td>' + (i + 1) + '</td>' +
+                    '<td><a href="/team/' + data[i].id + '">' + data[i].name + '</a></td></tr>'
             }
             $('#team-list').html(result);
-        })
-        .fail(function() {
-            console.log("error");
         });
     }
 }
