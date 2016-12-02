@@ -91,9 +91,6 @@ class TeamsController extends Controller
 
     public function search(Request $request)
     {
-        $this->validate($request, [
-            'search' => 'required'
-        ]);
         $search = $request->search;
         $teams = Team::searchByName($search)
             ->paginate(config('view.paginate'))

@@ -43,9 +43,12 @@
 
                     <div class='form-group'>
                         {!! Form::label('birthday', Lang::get('admin.birthday')) !!}
-                        {!! Form::date('birthday', null, [
-                            'class' => 'form-control'
-                        ]) !!}
+                        <div class='input-group date datetimepicker'>
+                            {!! Form::text('birthday', null, ['class' => 'form-control']) !!}
+                            <span class='input-group-addon'>
+                                <span class='glyphicon glyphicon-calendar'></span>
+                            </span>
+                        </div>
                     </div>
 
                     <div class='form-group'>
@@ -87,6 +90,7 @@
 
                 <script type='text/javascript'>CKEDITOR.replace('introduction');</script>
                 <script type='text/javascript' src='{{ asset('admin_asset/js/player.js') }}'></script>
+                <script type='text/javascript' src='{{ asset('admin_asset/js/app.js') }}'></script>
                 <script type='text/javascript'>
                     var f = new firebaseCustom();
                     f.init({
@@ -98,6 +102,8 @@
                     });
                     var p = new player();
                     p.init(f);
+                    var a = new app();
+                    a.init();
                 </script>
             </div>
         </div>
