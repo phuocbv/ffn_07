@@ -169,6 +169,9 @@ class AuthController extends Controller
                 $this->logout();
                 return back()->with('warning', Lang::get('login.please.active'));
             }
+            if (auth()->user()->is_admin) {
+                return redirect('/admin/player');
+            }
             return redirect()->to('home');
         }
         return back()->with('warning', Lang::get('login.login.wrong'));

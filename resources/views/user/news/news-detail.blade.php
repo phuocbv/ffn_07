@@ -1,4 +1,7 @@
 @extends('layouts.user.app')
+@section('title')
+    @lang('text.home_title')
+@endsection
 @section('content')
     <h1 class='page-header'></h1>
     <ol class="breadcrumb">
@@ -28,7 +31,15 @@
                     <div class='space10'></div>
                     <div class='break'></div>
                     <div class='space10'></div>
-                    <div class='newsContentDetail'>{!! ($news->content) !!}</div>
+                    <div class='newsContentDetail'>
+                        <div>{!! ($news->content) !!}</div>
+                        <br>
+                        <div class='fb-share-button' 
+                            data-href='{{ url()->current() }}' 
+                            data-layout='button_count'>
+                        </div>
+                        <br>
+                    </div>
                 </div>
                 <div class='well'>
                     <h4><b>@lang('news.write_comment')</b><span class='glyphicon glyphicon-pencil'></span></h4>
@@ -61,8 +72,12 @@
             @include('user.news.readest_news')
         </div>
     </div>
+    <div id='fb-root'></div>
+    <script type='text/javascript' src='{{ asset('user_asset/customs/js/facebook.js') }}'></script>
     <script type='text/javascript' src='{{ asset('user_asset/customs/js/news-detail.js') }}'></script>
     <script type='text/javascript'>
+        var facebook = new facebook;
+        facebook.init();
         var news_detail = new news_detail();
         @if (Auth::check())
             news_detail.init({
