@@ -42,6 +42,10 @@
                     <i class="fa fa-bar-chart-o fa-fw"></i>
                     @lang('admin.rank')
                 </a>
+                <a href="{!! route('admin.player_award.index') !!}">
+                    <i class="fa fa-bar-chart-o fa-fw"></i>
+                    @lang('admin.player_award')
+                </a>
             </li>
         </ul>
     </div>

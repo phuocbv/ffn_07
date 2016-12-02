@@ -83,5 +83,6 @@ return [
     'category' => 'Category',
 
     'player_award' => 'Player Award',
-    'player' => 'Player'
+    'player' => 'Player',
+    'player_award' => 'Player Award'
 ];
