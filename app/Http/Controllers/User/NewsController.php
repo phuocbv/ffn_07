@@ -25,6 +25,8 @@ class NewsController extends Controller
         $comments = $news->comments()->orderBy('created_at', 'desc')->get();
         $ortherNews = News::getNews(config('view.other_news'))->get();
         $readestNews = News::getNews(config('view.readest_news'), 'view_number')->get();
+        $news->view_number = $news->view_number + 1;
+        $news->update();
         return view('user.news.news-detail')->with([
             'categories' => $categories,
             'news' => $news,

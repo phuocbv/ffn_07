@@ -19,7 +19,7 @@
                 <h2 class='news-title-in-news-detail'><b>{{ $news->title }}</b></h2>
                 <div>
                     <ol class='breadcrumb breadcrumb-date'>
-                        <span>{!! $news->created_at->format('H:i:s Y-m-d') !!}</span>
+                        <span>{!! $news->created_at !!}</span>
                     </ol>
                 </div>
                 <div>

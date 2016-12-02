@@ -77,6 +77,24 @@ class HomeController extends Controller
         ]);
     }
 
+    public function showMatchResult($id)
+    {
+        $countries = Country::all();
+        $categories = Category::all();
+        $leagues = League::all();
+        $matchs = Match::matchResult($id)->get();
+        $otherNews = News::getNews(config('view.count_other_news'), 'created_at', 'desc')->get();
+        $readestNews = News::getNews(config('view.count_readest_news'), 'view_number')->get();
+        return view('user.match.result-match')->with([
+            'countries' => $countries,
+            'leaguesList' => $leagues,
+            'categories' => $categories,
+            'ortherNews' => $otherNews,
+            'readestNews' => $readestNews,
+            'matchs' => $matchs,
+        ]);
+    }
+
     public function searchLeagueSeason(Request $request)
     {
         $data = $request->only('league_id', 'league_season_id');

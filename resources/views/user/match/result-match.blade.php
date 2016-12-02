@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
 @section('title')
-    @lang('user.match')
+    @lang('user.result')
 @stop
 @section('content')
     <h1 class='page-header'></h1>
@@ -8,12 +8,12 @@
         <li><a href="{{ route('home') }}">@lang('text.home_title')</a></li>
         @if (count($matchs) > 0)
             <li>
-                <a href="{{ route('showMatch', $matchs[0]->leagueSeason->league->id) }}">
+                <a href="{{ route('showMatchResult', $matchs[0]->leagueSeason->league->id) }}">
                     {{ $matchs[0]->leagueSeason->league->name }}
                 </a>
             </li>
             <li>
-                <a href="{{ route('showMatch', $matchs[0]->leagueSeason->id) }}">
+                <a href="{{ route('showMatchResult', $matchs[0]->leagueSeason->id) }}">
                     {{ $matchs[0]->leagueSeason->year }}
                 </a>
             </li>
@@ -25,7 +25,7 @@
             @include('user.news.other-news')
         </div>
         <div class='col-lg-7 col-sm-9 col-md-7 col-xs-9'>    
-            <h2 class='title-match-info'><b>@lang('user.football_schedule')</b></h2>
+            <h2 class='title-match-info'><b>@lang('user.football_result')</b></h2>
             <div>
                 <ol class='breadcrumb'></ol>
             </div>
@@ -36,7 +36,8 @@
                     <table class='table table-bordered'>
                         <thead>
                             <tr>
-                                <th class='center-text' width='35%'>@lang('user.time')</th>
+                                <th class='center-text'>@lang('user.column_start_time')</th>
+                                <th class='center-text'>@lang('user.column_end_time')</th>
                                 <th colspan='3' class='center-text'>@lang('user.matches')</th>
                             </tr>
                         </thead>
@@ -44,14 +45,18 @@
                             @foreach ($matchs as $key => $element)
                                 <tr>
                                     <td align='center'>{{ $element->start_time }}</td>
-                                    <td align='center' width='20%'>
+                                    <td align='center'>{{ ($element->status == 1) ? '---' : $element->end_time }}</td>
+                                    <td align='center' width='15%'>
                                         <a href="{{ route('team.show', $element->findTeam($element->team1_id)->id) }}">
                                             {{ $element->findTeam($element->team1_id)->name }}
                                         </a>
                                     </td>
-                                    <td align='center'>{{ ($element->status == config('view.number_zero')) ? '?' : $element->team1_goal }} 
-                                        - {{ ($element->status == config('view.number_zero')) ? '?' : $element->team2_goal }}</td>
-                                    <td align='center' width='20%'>
+                                    <td align='center' class='color-red'>
+                                        <div>{{ ($element->status == config('view.number_zero')) ? '?' : $element->team1_goal }} 
+                                            - {{ ($element->status == config('view.number_zero')) ? '?' : $element->team2_goal }}</div>
+                                        <div>{{ ($element->status == 1) ? Lang::get('user.updating') : '' }}</div>
+                                    </td>
+                                    <td align='center' width='15%'>
                                         <a href="{{ route('team.show', $element->findTeam($element->team2_id)->id) }}">
                                             {{ $element->findTeam($element->team2_id)->name }}
                                         </a>

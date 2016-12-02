@@ -49,7 +49,24 @@
                             </li>
                         @endforeach
                     </ul>
-                </li>charts
+                </li>
+                <li class='dropdown'>
+                    <a href='javascript:void(0)' class='dropdown-toggle' data-toggle='dropdown'>
+                        @lang('user.result') <b class='caret'></b>
+                    </a>
+                    <ul class='dropdown-menu'>
+                        @foreach ($leaguesList as $key => $element)
+                            <li class='dropdown dropdown-submenu'>
+                                <a href='' class='dropdown-toggle' data-toggle='dropdown'>{{ $element->name }}</a>
+                                <ul class='dropdown-menu'>
+                                    @foreach ($element->leagueSeasons as $key => $value)
+                                        <li><a href="{{ route('showMatchResult', $value->id) }}">{{ $value->year }}</a></li>
+                                    @endforeach  
+                                </ul>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class='dropdown'>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">@lang('login.login')</a></li>

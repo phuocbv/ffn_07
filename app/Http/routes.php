@@ -103,6 +103,10 @@ Route::group(['namespace' => 'User'], function() {
     Route::resource('/match', 'MatchController');
     Route::get('/matchInDay', 'MatchController@matchInDay');
     Route::get('/showMatch/{id}', ['as' => 'showMatch', 'uses' => 'HomeController@showMatch']);
+    Route::get('/showMatchResult/{id}', [
+        'as' => 'showMatchResult',
+        'uses' => 'HomeController@showMatchResult'
+    ]);
     Route::get('/showCharts/{id}', ['as' => 'showCharts', 'uses' => 'HomeController@showCharts']);
 });
 
