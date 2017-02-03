@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
-
+var bowerFiles = require('main-bower-files');
+require('es6-promise').polyfill();
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -10,7 +11,11 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
+elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
     mix.sass('app.scss');
+    mix.scripts(bowerFiles('*.js'), 'public/js/app.js', '/');
+    mix.copy('bower_components/metisMenu/dist/metisMenu.min.js', 'public/metisMenu/dist/metisMenu.min.js');
+    mix.copy('bower_components/font-awesome', 'public/font-awesome');
 });

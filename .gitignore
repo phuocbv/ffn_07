@@ -4,3 +4,10 @@
 Homestead.yaml
 Homestead.json
 .env
+bower_components
+npm-debug.log
+.gitignore
+bootstrap/cache/.gitignore 
+/nbproject/private/
+nbproject
+/public
